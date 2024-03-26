@@ -38,7 +38,7 @@ def offload_process(data: list, process_name: str, offload_url: str) -> list:
 
 def run(offload: str = None) -> float:
     data = generate_data()
-    offload_url = 'http://localhost:5001'
+    offload_url = 'http://172.20.10.4:5001'
 
     if offload == 'process1':
         thread = threading.Thread(target=lambda: offload_process(data, 'process1', offload_url))

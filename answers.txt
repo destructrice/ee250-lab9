@@ -1,0 +1,13 @@
+#Question 1: Under what circumstances do you think it will be worthwhile to offload one or both of 
+#the processing tasks to your PC? And conversely, under what circumstances will it not be worthwhile?
+
+# Question 2: Why do we need to join the thread here?
+
+# Question 3: Are the processing functions executing in parallel or just concurrently? What is the difference?
+
+# Question 4: What is the best offloading mode? Why do you think that is?
+
+# Question 5: What is the worst offloading mode? Why do you think that is?
+
+# Question 6: The processing functions in the example aren't very likely to be used in a real-world application.
+

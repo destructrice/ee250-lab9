@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 # Import process1 from your main solution. Ensure process2 is also imported or defined.
-from main_sol import process1, process2
+from main import process1, process2
 
 app = Flask(__name__)
 

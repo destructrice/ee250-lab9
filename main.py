@@ -45,13 +45,13 @@ def run(offload: str = None) -> float:
         thread.start()
         data2 = process2(data)
         thread.join()
-        data1 = thread.result
+        data1 = offload_process(data, 'process1', offload_url)
     elif offload == 'process2':
         data1 = process1(data)
         thread = threading.Thread(target=lambda: offload_process(data, 'process2', offload_url))
         thread.start()
         thread.join()
-        data2 = thread.result
+        data2 = offload_process(data, 'process2', offload_url)
     elif offload == 'both':
         thread1 = threading.Thread(target=lambda: offload_process(data, 'process1', offload_url))
         thread2 = threading.Thread(target=lambda: offload_process(data, 'process2', offload_url))
@@ -59,8 +59,8 @@ def run(offload: str = None) -> float:
         thread2.start()
         thread1.join()
         thread2.join()
-        data1 = thread1.result
-        data2 = thread2.result
+        data1 = offload_process(data, 'process1', offload_url)
+        data2 = offload_process(data, 'process2', offload_url)
     else:  # No offloading
         data1 = process1(data)
         data2 = process2(data)

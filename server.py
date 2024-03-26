@@ -31,6 +31,7 @@ def process2_route():
     return jsonify(processed_data)
 
 if __name__ == "__main__":
-    app.run(host='localhost', port=5001)
+    app.run(host='172.20.10.4', port=5001)
+
     # Use the line below instead if you want to allow connections from any machine in the same network
     # app.run(host='0.0.0.0', port=5001)

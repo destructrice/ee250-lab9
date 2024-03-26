@@ -16,7 +16,7 @@ The best offloading mode would probably be to offload both process1 and process2
 
 # Question 5: What is the worst offloading mode? Why do you think that is?
 
-The worst offloading mode would probably be no offlodaing because this would force the Raspberry Pi to perform computationally intensive processes that it is not designed for (would be much more efficient to use a PC for this). 
+The worst offloading mode would probably be no offloading because this would force the Raspberry Pi to perform computationally intensive processes that it is not designed for (would be much more efficient to use a PC for this). 
 
 # Question 6: The processing functions in the example aren't very likely to be used in a real-world application. What kind of processing functions would be more likely to be used in a real-world application? When would you want to offload these functions to a server?
 

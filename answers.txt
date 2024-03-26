@@ -1,13 +1,24 @@
-#Question 1: Under what circumstances do you think it will be worthwhile to offload one or both of 
-#the processing tasks to your PC? And conversely, under what circumstances will it not be worthwhile?
+# Question 1: Under what circumstances do you think it will be worthwhile to offload one or both of the processing tasks to your PC? And conversely, under what circumstances will it not be worthwhile?
+
+Offloading the processing tasks will be worthwhile if the PC has greater processing power than the Raspberry Pi, which is true in this case. However, a limitation of offloading tasks is that there could be network latency and low bandwidth between the Raspberry Pi and the PC.
 
 # Question 2: Why do we need to join the thread here?
 
+We need to join the thread here because we have to make sure that the program waits for threads to complete their execution before proceeding. This is particularly important when tasks depend on each other, so you need to make sure that each thread is fully completed.
+
 # Question 3: Are the processing functions executing in parallel or just concurrently? What is the difference?
+
+Processing functions on the Raspberry Pi would be concurrent, not parallel. This is because Python has a Global Interpreter Lock (GIL) which only allows one thread at a time to control it (source: https://realpython.com/python-gil/#:~:text=The%20Python%20Global%20Interpreter%20Lock%20or%20GIL%2C%20in%20simple%20words,at%20any%20point%20in%20time). Parallel execution is when processing functions happen simultaneously, which would happen when offloading tasks to a PC (no GIL).
 
 # Question 4: What is the best offloading mode? Why do you think that is?
 
+The best offloading mode would probably be to offload both process1 and process2 to the PC since they have a lot of computation involved, which would go faster on the PC than the Raspberry Pi. Again, this is assuming that there is not significant network latency/bandwidth constraints that wouldn't allow for timely data transfer.
+
 # Question 5: What is the worst offloading mode? Why do you think that is?
 
-# Question 6: The processing functions in the example aren't very likely to be used in a real-world application.
+The worst offloading mode would probably be no offlodaing because this would force the Raspberry Pi to perform computationally intensive processes that it is not designed for (would be much more efficient to use a PC for this). 
+
+# Question 6: The processing functions in the example aren't very likely to be used in a real-world application. What kind of processing functions would be more likely to be used in a real-world application? When would you want to offload these functions to a server?
+
+Processing functions that would be more likely to be used in a real-world application might be image/video processing, data analytics of big data, and some machine learning applications. It's more efficient to offload these functions to a server when lots of computation is required (additionally, the use of complex algorithms).
 
